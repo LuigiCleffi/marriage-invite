@@ -1,5 +1,6 @@
 "use client"
 
+import CountDown from "@/components/CountDown";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -57,6 +58,7 @@ export default function Home() {
             Responder até 30 de março de 2025
           </Button>
         </CardContent>
+        <CountDown />
       </Card>
       <Toaster />
     </div>
