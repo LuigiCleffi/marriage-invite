@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Toaster } from "@/components/ui/toaster";
 import { useToast } from "@/hooks/use-toast";
 import { ToastAction } from "@radix-ui/react-toast";
+import { Calendar } from "lucide-react";
 import { useCallback } from "react";
 
 const googleCalendarInfo = {
@@ -38,7 +39,10 @@ export default function Home() {
           altText="Adicionar no Google Calendar"
           onClick={() => window.open(googleCalendarUrl, "_blank")}
         >
-          Abrir Google Calendar
+          <Button variant="outline" className="gap-2">
+            Abrir Calendario
+            <Calendar size={18} />
+          </Button>
         </ToastAction>
       ),
     });
@@ -46,9 +50,7 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-blue-50 dark:bg-muted transition-colors">
-      <div className="absolute top-4 right-4">
-        <ThemeToggle />
-      </div>
+      <Toaster />
       <Card className="w-full max-w-lg text-center p-6 md:p-10 border border-gold dark:border-gray-200 shadow-lg rounded-lg transition-all mx-4 sm:mx-8">
         <CardContent>
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-pink-600 dark:text-foreground mb-4">
@@ -70,7 +72,9 @@ export default function Home() {
         </CardContent>
         <CountDown />
       </Card>
-      <Toaster />
+      <div className="absolute bottom-4 right-4">
+        <ThemeToggle />
+      </div>
     </div>
   );
 }
